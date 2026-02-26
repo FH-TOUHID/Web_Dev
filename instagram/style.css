@@ -1,0 +1,134 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+}
+
+.insta-container {
+    width: 100%;
+    max-width: 800px;
+    background: white;
+    min-height: 100vh;
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+}
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100;
+    border-bottom: 1px solid #efefef;
+}
+.logo { font-family: 'Grand Hotel', cursive; font-size: 32px; }
+.top-icons i { font-size: 25px; margin-left: 18px; cursor: pointer; }
+.stories-container {
+    display: flex;
+    padding: 15px 10px;
+    gap: 15px;
+    overflow-x: auto; /* Allows horizontal swipe */
+    white-space: nowrap;
+    border-bottom: 1px solid #efefef;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.stories-container::-webkit-scrollbar {
+    display: none;
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 76px; /* Ensures items don't shrink */
+    cursor: pointer;
+}
+
+.img-wrapper {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    padding: 2.5px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    position: relative;
+}
+.img-wrapper.my-story {
+    background: #dbdbdb; 
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+/* Blue Plus Icon for Your Story */
+.add-icon {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: #0095f6;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.story span {
+    font-size: 11px;
+    margin-top: 5px;
+    color: #262626;
+    width: 70px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adds ... if name is too long */
+}
+
+/* Post Design */
+.post { margin-bottom: 20px; border-bottom: 1px solid #efefef; }
+.post-header { display: flex; justify-content: space-between; align-items: center; padding: 12px; }
+.user-info { display: flex; align-items: center; gap: 10px; }
+.user-info img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; }
+.username { font-weight: 600; font-size: 14px; }
+
+.post-content { position: relative; width: 100%; cursor: pointer; background: #000; }
+.post-content img { width: 100%; display: block; }
+
+/* Double Tap Pop Heart */
+.pop-heart {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) ;
+    font-size: 80px; color: #fff; pointer-events: none; opacity: 0;
+}
+.pop-heart.animate { animation: pop 0.8s ease-out; color: #ed4956; }
+
+@keyframes pop {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    30% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.9; }
+    60% { transform: translate(-50%, -50%) scale(1); opacity: 0.9; }
+    100% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+}
+
+/* Reactions */
+.post-footer { padding: 12px 15px; }
+.action-buttons { display: flex; justify-content: space-between; font-size: 24px; margin-bottom: 8px; }
+.left-actions { display: flex; gap: 18px; }
+.action-buttons i { cursor: pointer; }
+.fa-solid.fa-heart { color: #ed4956; } /* Liked status color */
+
+.likes-count { font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+.caption { font-size: 14px; line-height: 1.5; color: #262626; }

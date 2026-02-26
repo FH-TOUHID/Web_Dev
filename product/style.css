@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #1a1a2e 0%, #0f0f1b 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+#header {
+    text-align: center;
+    padding: 20px 20px;
+}
+.neon-text {
+    font-size: 3rem;
+    color: #00d4ff;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px #00d4ff;
+    margin: 0;
+}
+
+#header p {
+    color: #a2a2ba;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+#content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.pic {
+    background: rgba(255, 255, 255, 0.05); /* Slight transparency */
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease; /* Smooth hover transition */
+    cursor: pointer;
+    backdrop-filter: blur(5px); /* Modern glass effect */
+}
+.pic:hover {
+    transform: translateY(-10px);
+    border-color: #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 
+                0 0 40px rgba(0, 212, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+}
+.img-container {
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.pic img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+.pic:hover img {
+    transform: scale(1.1);
+}
+.pic h3 {
+    font-size: 1.1rem;
+    color: #00d4ff;
+    margin: 10px 0;
+}
+.description {
+    font-size: 0.85rem;
+    color: #ccc;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Footer */
+#footer {
+    text-align: center;
+    padding: 50px;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* Responsive view */
+@media (max-width: 1024px) {
+    #content { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    #content { grid-template-columns: 1fr; }
+}
